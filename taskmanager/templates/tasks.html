@@ -35,6 +35,7 @@
             {% endif %}
             <td>{{ task.category }}</td>
             <td><a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn green">Edit</a></td>
+            <td><a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn red">Delete</a></td>
         </tr>
         {% endfor %}
     </tbody>

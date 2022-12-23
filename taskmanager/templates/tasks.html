@@ -11,4 +11,31 @@
     </div>
 </div>
 
+<table class="responsive-table striped light-blue-text text-darken-4">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Urgent</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.task_name }}</td>
+            <td>{{ task.task_description }}</td>
+            <td>{{ task.due_date.strftime("%d %B, %Y") }}</td>
+            {% if task.is_urgent %}
+                <td>Yes</td>
+            {% else %}
+                <td>No</td>
+            {% endif %}
+            <td>{{ task.category }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
